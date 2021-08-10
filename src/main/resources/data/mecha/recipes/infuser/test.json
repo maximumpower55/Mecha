@@ -1,0 +1,11 @@
+{
+  "type": "mecha:infuser",
+  "energyUsed": 5.5,
+  "inputA": {
+    "item": "minecraft:stone"
+  },
+  "inputB": {
+    "item": "minecraft:stone"
+  },
+  "result": "minecraft:cobblestone"
+}

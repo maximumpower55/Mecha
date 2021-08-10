@@ -1,0 +1,33 @@
+{
+  "credit": "Made with Blockbench",
+  "textures": {
+    "0": "mecha:block/compressor_piston"
+  },
+  "elements": [
+    {
+      "from": [5, 0, 5],
+      "to": [11, 2, 11],
+      "rotation": { "angle": 0, "axis": "y", "origin": [7.5, 0.5, 1.5] },
+      "faces": {
+        "north": { "uv": [0, 0, 6, 2], "texture": "#0" },
+        "east": { "uv": [0, 0, 6, 2], "texture": "#0" },
+        "south": { "uv": [0, 0, 6, 2], "texture": "#0" },
+        "west": { "uv": [0, 0, 6, 2], "texture": "#0" },
+        "up": { "uv": [0, 0, 6, 6], "texture": "#0" },
+        "down": { "uv": [0, 0, 6, 6], "texture": "#0" }
+      }
+    },
+    {
+      "from": [6, 2, 6],
+      "to": [10, 10, 10],
+      "faces": {
+        "north": { "uv": [0, 0, 4, 8], "texture": "#0" },
+        "east": { "uv": [0, 0, 4, 8], "texture": "#0" },
+        "south": { "uv": [0, 0, 4, 8], "texture": "#0" },
+        "west": { "uv": [0, 0, 4, 8], "texture": "#0" },
+        "up": { "uv": [0, 0, 4, 4], "texture": "#0" },
+        "down": { "uv": [0, 0, 4, 4], "texture": "#missing" }
+      }
+    }
+  ]
+}
