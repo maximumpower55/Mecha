@@ -1,6 +1,8 @@
-package me.maximumpower55.mecha;
+package me.maximumpower55.mecha.data;
 
-import static me.maximumpower55.mecha.core.utils.ResourceUtils.prefixPath;
+import static me.maximumpower55.mecha.api.utils.ResourceUtils.prefixPath;
+
+import me.maximumpower55.mecha.MechaMod;
 import net.devtech.arrp.api.RRPCallback;
 import net.devtech.arrp.api.RRPPreGenEntrypoint;
 import net.devtech.arrp.api.RuntimeResourcePack;
@@ -36,7 +38,7 @@ public final class MechaResourceGen implements RRPPreGenEntrypoint {
         }
 
         for (ResourceLocation id : CABLES) {
-            pack.addBlockState(JState.state().add(JState.variant(JState.model(prefixPath(id, "block")))), id); 
+            pack.addBlockState(JState.state().add(JState.variant(JState.model(prefixPath(id, "block")))), id);
         }
     }
 

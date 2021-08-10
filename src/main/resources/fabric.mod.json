@@ -17,7 +17,8 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": ["me.maximumpower55.mecha.MechaMod"],
-		"client": ["me.maximumpower55.mecha.MechaModClient"]
+		"client": ["me.maximumpower55.mecha.MechaModClient"],
+		"rrp:pregen": ["me.maximumpower55.mecha.data.MechaResourceGen"]
 	},
 
 	"depends": {

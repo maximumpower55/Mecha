@@ -1,4 +1,4 @@
-package me.maximumpower55.mecha.api;
+package me.maximumpower55.mecha.api.registry;
 
 import java.util.ArrayList;
 
