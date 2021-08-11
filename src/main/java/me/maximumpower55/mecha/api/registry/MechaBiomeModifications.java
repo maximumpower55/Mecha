@@ -8,11 +8,13 @@ import org.jetbrains.annotations.ApiStatus.Internal;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.biome.v1.NetherBiomes;
+import net.fabricmc.fabric.mixin.biome.VanillaLayeredBiomeSourceAccessor;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 
@@ -20,9 +22,9 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 public final class MechaBiomeModifications {
     private static final WeakHashMap<WorldType, OreModification> ORE_MODIFICATIONS = new WeakHashMap<>();
 
-    public static final WorldType OVERWORLD = (WorldType)BiomeSelectors.foundInOverworld();
-    public static final WorldType NETHER = (WorldType)BiomeSelectors.foundInTheNether();
-    public static final WorldType END = (WorldType)BiomeSelectors.foundInTheEnd();
+    public static final WorldType OVERWORLD = ctx -> VanillaLayeredBiomeSourceAccessor.getBIOMES().contains(ctx.getBiomeKey());
+    public static final WorldType NETHER = ctx -> NetherBiomes.canGenerateInNether(ctx.getBiomeKey());
+    public static final WorldType END = ctx -> ctx.getBiome().getBiomeCategory() == Biome.BiomeCategory.THEEND;
 
 	public static void addOre(WorldType worldType, GenerationStep.Decoration step, ResourceLocation location, ConfiguredFeature<?, ?> feature) {
         ResourceKey<ConfiguredFeature<?, ?>> featureKey = ResourceKey.create(Registry.CONFIGURED_FEATURE_REGISTRY, location);

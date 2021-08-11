@@ -1,6 +1,7 @@
-package me.maximumpower55.mecha.block.machines;
+package me.maximumpower55.mecha.world.level.block.machine;
 
-import me.maximumpower55.mecha.core.block.BaseBlockEntityProvider;
+import me.maximumpower55.mecha.api.block.BaseBlockEntityProvider;
+import me.maximumpower55.mecha.world.level.block.entity.machine.InfuserMachineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -12,19 +13,19 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
 public class InfuserMachineBlock extends BaseBlockEntityProvider {
-    public InfuserMachineBlock(Settings settings) {
-        super(settings);
+    public InfuserMachineBlock(Properties properties) {
+        super(properties);
     }
 
     @Override
-    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new InfuserMachineBlockEntity(pos, state);
     }
 
     @Override
-    public InteractionResult onUse(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if(!world.isClientSide) {
-            MenuProvider screenHandlerFactory = state.getMenuProvider(world, pos);
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if(!level.isClientSide) {
+            MenuProvider screenHandlerFactory = state.getMenuProvider(level, pos);
 
             if (screenHandlerFactory != null) {
                 player.openMenu(screenHandlerFactory);

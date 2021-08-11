@@ -1,7 +1,7 @@
-package me.maximumpower55.mecha.block.machines;
+package me.maximumpower55.mecha.world.level.block.entity.machine;
 
 import me.maximumpower55.mecha.ModBlockEntities;
-import me.maximumpower55.mecha.core.machine.block.BaseMachineBlockEntity;
+import me.maximumpower55.mecha.api.block.entity.machine.BaseMachineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -19,7 +19,7 @@ public class CompressorMachineBlockEntity extends BaseMachineBlockEntity {
     }
 
     @Override
-    public void tick(Level world, BlockPos pos, BlockState state, BaseMachineBlockEntity blockEntity) {}
+    public void tick(Level level, BlockPos pos, BlockState state, BaseMachineBlockEntity blockEntity) {}
 
     @Override
     public AbstractContainerMenu createMenu(int syncId, Inventory playerInventory, Player player) {

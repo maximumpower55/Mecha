@@ -1,6 +1,6 @@
 package me.maximumpower55.mecha;
 
-import me.maximumpower55.mecha.recipe.InfusingRecipe;
+import me.maximumpower55.mecha.data.recipe.InfusingRecipe;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.crafting.RecipeType;
 

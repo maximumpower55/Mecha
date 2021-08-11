@@ -1,6 +1,6 @@
 package me.maximumpower55.mecha;
 
-import me.maximumpower55.mecha.recipe.InfusingRecipe;
+import me.maximumpower55.mecha.data.recipe.InfusingRecipe;
 import net.minecraft.core.Registry;
 
 public class ModRecipeSerializers {
@@ -8,5 +8,5 @@ public class ModRecipeSerializers {
 
     public static void register() {
         Registry.register(Registry.RECIPE_SERIALIZER, MechaMod.id("infuser"), INFUSING_RECIPE_SERIALIZER);
-    } 
+    }
 }

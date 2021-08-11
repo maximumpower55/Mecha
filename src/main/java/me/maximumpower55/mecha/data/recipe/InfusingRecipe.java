@@ -1,4 +1,4 @@
-package me.maximumpower55.mecha.recipe;
+package me.maximumpower55.mecha.data.recipe;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -36,8 +36,8 @@ public class InfusingRecipe implements Recipe<WorldlyContainer>  {
 	}
 
     @Override
-    public ItemStack craft(WorldlyContainer inv) {
-        return this.getResultItem().copy();
+    public ItemStack assemble(WorldlyContainer container) {
+        return result.copy();
     }
 
     @Override
@@ -57,7 +57,7 @@ public class InfusingRecipe implements Recipe<WorldlyContainer>  {
     public Ingredient getInputA() {
 		return inputA;
 	}
- 
+
 	public Ingredient getInputB() {
 		return inputB;
 	}
@@ -118,11 +118,11 @@ public class InfusingRecipe implements Recipe<WorldlyContainer>  {
         }
 
         @Override
-        public void write(FriendlyByteBuf packet, InfusingRecipe recipe) {
+        public void toNetwork(FriendlyByteBuf packet, InfusingRecipe recipe) {
             packet.writeDouble(recipe.getEnergyUsed());
             recipe.getInputA().toNetwork(packet);
             recipe.getInputB().toNetwork(packet);
-            packet.writeItem(recipe.getResultItem());
-        }  
+            packet.writeItem(recipe.result);
+        }
     }
 }

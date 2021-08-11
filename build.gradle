@@ -17,6 +17,17 @@ repositories {
         url = uri("https://ldtteam.jfrog.io/artifactory/parchmentmc-snapshots/")
     }
 	maven { url = uri("https://storage.googleapis.com/devan-maven/") }
+    maven {
+        name = "Technici4n"
+        url = "https://raw.githubusercontent.com/Technici4n/Technici4n-maven/master/"
+        content {
+            includeGroup "dev.technici4n"
+        }
+    }
+    maven {
+        name = "CottonMC"
+        url = "https://server.bbkr.space/artifactory/libs-release"
+    }
     maven { url "https://maven.shedaniel.me/" }
 }
 
@@ -34,11 +45,10 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    modImplementation "net.devtech:arrp:0.4.4"
-
-    modApi include("me.shedaniel.cloth:cloth-config-fabric:${project.clothconfig_version}") {
-        exclude(group: "net.fabricmc.fabric-api")
-    }
+    modApi include("net.devtech:arrp:0.4.4")
+    modApi include("dev.technici4n:FastTransferLib:${project.ftl_version}")
+    modApi include("io.github.cottonmc:LibGui:${project.libgui_version}")
+    modApi include("me.shedaniel.cloth:cloth-config-fabric:${project.clothconfig_version}")
 }
 
 processResources {

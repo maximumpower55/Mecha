@@ -1,4 +1,4 @@
-package me.maximumpower55.mecha.gui.screens;
+package me.maximumpower55.mecha.client.gui.screens;
 
 import io.github.cottonmc.cotton.gui.client.CottonInventoryScreen;
 import net.minecraft.network.chat.Component;

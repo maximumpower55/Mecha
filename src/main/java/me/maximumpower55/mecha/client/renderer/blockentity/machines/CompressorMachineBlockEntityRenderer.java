@@ -1,10 +1,11 @@
-package me.maximumpower55.mecha.block.machines.renderers;
+package me.maximumpower55.mecha.client.renderer.blockentity.machines;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+
 import me.maximumpower55.mecha.ModModels;
-import me.maximumpower55.mecha.block.machines.CompressorMachineBlockEntity;
-import me.maximumpower55.mecha.core.utils.MechaEvents;
-import me.maximumpower55.mecha.core.utils.ModelUtils;
+import me.maximumpower55.mecha.api.utils.MechaEvents;
+import me.maximumpower55.mecha.api.utils.ModelUtils;
+import me.maximumpower55.mecha.world.level.block.entity.machine.CompressorMachineBlockEntity;
 import net.fabricmc.fabric.api.client.model.BakedModelManagerHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LevelRenderer;
@@ -37,7 +38,7 @@ public class CompressorMachineBlockEntityRenderer implements BlockEntityRenderer
 
         matrices.translate(0.0, pistonY, 0.0);
 
-        int pistonModelLight = LevelRenderer.getLightColor(blockEntity.getWorld(), blockEntity.getPos().up());
+        int pistonModelLight = LevelRenderer.getLightColor(blockEntity.getLevel(), blockEntity.getBlockPos().above());
         ModelUtils.renderModel(vertexConsumers.getBuffer(RenderType.solid()), matrices, pistonModel, pistonModelLight, OverlayTexture.NO_OVERLAY, Direction.NORTH);
 
         matrices.popPose();

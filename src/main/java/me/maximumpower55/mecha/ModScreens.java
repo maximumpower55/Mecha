@@ -1,7 +1,7 @@
 package me.maximumpower55.mecha;
 
-import me.maximumpower55.mecha.gui.screens.InfuserMachineBlockGuiDescription;
-import me.maximumpower55.mecha.gui.screens.InfuserMachineBlockScreen;
+import me.maximumpower55.mecha.client.gui.screens.InfuserMachineBlockGuiDescription;
+import me.maximumpower55.mecha.client.gui.screens.InfuserMachineBlockScreen;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.world.inventory.ContainerLevelAccess;

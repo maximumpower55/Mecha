@@ -1,11 +1,11 @@
-package me.maximumpower55.mecha.gui.screens;
+package me.maximumpower55.mecha.client.gui.screens;
 
 import io.github.cottonmc.cotton.gui.SyncedGuiDescription;
 import io.github.cottonmc.cotton.gui.widget.WGridPanel;
 import io.github.cottonmc.cotton.gui.widget.WItemSlot;
 import io.github.cottonmc.cotton.gui.widget.data.Insets;
 import me.maximumpower55.mecha.ModScreens;
-import me.maximumpower55.mecha.core.gui.widgets.WEnergyBar;
+import me.maximumpower55.mecha.client.gui.widgets.WEnergyBar;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 
